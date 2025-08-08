@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Hostname Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/spinner.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spinner.css' %}">
 </head>
 <body>
     <h1>Hostname Dashboard</h1>
@@ -21,13 +22,7 @@
         <tbody></tbody>
     </table>
 
-    <script src="js/apiConfig.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="{% static 'js/apiConfig.js' %}"></script>
+    <script src="{% static 'js/dashboard.js' %}"></script>
 </body>
 </html>
-
-
-
-
-
-

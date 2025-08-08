@@ -1,3 +1,4 @@
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Process Monitor - Real Time</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <div class="container">
@@ -18,11 +19,11 @@
         </div>
 
         <div class="controls">
-            <input type="text" id="hostnameInput" placeholder="Enter hostname" value="" readonly>
+            <input type="text" id="hostnameInput" placeholder="Enter hostname" value="{{ hostname }}">
             <button class="btn btn-primary" onclick="connect()">Connect</button>
             <button class="btn btn-primary" onclick="refresh()">Refresh</button>
             
-            <button class="btn btn-primary"><a href="./index.html">Go to dashboard</a></button>
+            <a href="{% url 'index' %}" class="btn btn-primary">Go to dashboard</a>
             <span id="lastUpdate">Never updated</span>
         </div>
 
@@ -62,6 +63,6 @@
         </div>
     </div>
 
-    <script src="./js/live.js"></script>
+    <script src="{% static 'js/live.js' %}"></script>
 </body>
 </html>

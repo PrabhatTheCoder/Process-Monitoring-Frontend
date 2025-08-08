@@ -1,25 +1,27 @@
+{% load static %}
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>System Snapshot</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/spinner.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spinner.css' %}">
 </head>
 <body>
 
     <h1>System Snapshot</h1>
     <div id="spinner" class="spinner"></div>
-    <div class="back">  <button class="btn btn-primary"><a href="./index.html">Go to dashboard</a></button></div>
+    <div class="back">
+      <button class="btn btn-primary"><a href="{% url 'index' %}">Go to dashboard</a></button>
+    </div>
     <p id="errorMsg" class="error"></p>
     <table id="snapshotTable">
         <thead>
-
         </thead>
         <tbody></tbody>
     </table>
 
-    <script src="js/apiConfig.js"></script>
-    <script src="js/snapshot.js"></script>
+    <script src="{% static 'js/apiConfig.js' %}"></script>
+    <script src="{% static 'js/snapshot.js' %}"></script>
 </body>
 </html>
