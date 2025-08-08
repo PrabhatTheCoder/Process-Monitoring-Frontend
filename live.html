@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Monitor - Real Time</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">🔍 Process Monitor</div>
+            <div class="status">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Disconnected</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="hostnameInput" placeholder="Enter hostname" value="" readonly>
+            <button class="btn btn-primary" onclick="connect()">Connect</button>
+            <button class="btn btn-primary" onclick="refresh()">Refresh</button>
+            
+            <button class="btn btn-primary"><a href="./index.html">Go to dashboard</a></button>
+            <span id="lastUpdate">Never updated</span>
+        </div>
+
+        <div class="content">
+            <div class="info-bar">
+                <div class="info-item">
+                    <div class="info-value" id="totalProcesses">-</div>
+                    <div class="info-label">Total Processes</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-value" id="rootProcesses">-</div>
+                    <div class="info-label">Root Processes</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-value" id="avgCpu">-</div>
+                    <div class="info-label">Avg CPU %</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-value" id="avgMemory">-</div>
+                    <div class="info-label">Avg Memory %</div>
+                </div>
+            </div>
+
+            <div id="errorContainer"></div>
+
+            <div class="process-tree">
+                <div class="tree-header">
+                    <div>Process Name</div>
+                    <div>PID</div>
+                    <div>CPU Usage</div>
+                    <div>Memory Usage</div>
+                </div>
+                <div id="processContainer">
+                    <div class="loading">Click Connect to start monitoring...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/live.js"></script>
+</body>
+</html>
